@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mithul Industries - LFEN</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-text">
+        <h1>Mithul Industries</h1>
+        <p>LFEN - THE BIG THING</p>
+      </div>
+      <nav class="navbar">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌓</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="hero" data-animate>
+        <h1>Powering Homes & Businesses</h1>
+        <p>
+          High-efficiency inverters with unmatched performance and durability.
+        </p>
+      </section>
+
+      <section class="gallery" id="gallery" data-animate>
+        <h2>Product Gallery</h2>
+        <div class="gallery-grid">
+          <div class="product-card">
+            <img src="/IMG/Productimg/img1.jpg" alt="LFEN 1000" />
+            <h3>LFEN 1000</h3>
+            <p>1000W | 12V | Pure Sine Wave</p>
+          </div>
+          <div class="product-card">
+            <img
+              src="https://via.placeholder.com/300x200?text=Inverter+2"
+              alt="LFEN 1500"
+            />
+            <h3>LFEN 1500</h3>
+            <p>1500W | 24V | LCD Display</p>
+          </div>
+          <div class="product-card">
+            <img
+              src="https://via.placeholder.com/300x200?text=Inverter+3"
+              alt="LFEN 2000"
+            />
+            <h3>LFEN 2000</h3>
+            <p>2000W | 24V | Smart Cooling</p>
+          </div>
+          <div class="product-card">
+            <img
+              src="https://via.placeholder.com/300x200?text=Inverter+4"
+              alt="LFEN Pro"
+            />
+            <h3>LFEN Pro</h3>
+            <p>3000W | 48V | WiFi Monitoring</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" data-animate>
+        <h2>Contact Us</h2>
+        <form
+          action="mailto:mithulindustries@gmail.com"
+          method="POST"
+          enctype="text/plain"
+        >
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps?q=10.17392552,76.49673446&z=15&output=embed"
+            width="100%"
+            height="300"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Mithul Industries. All rights reserved.</p>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/9447305247?text=Hello%20Mithul%20Industries!"
+      class="whatsapp-float"
+      target="_blank"
+      title="Chat on WhatsApp"
+      >💬</a
+    >
+
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+      }
+
+      function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("show");
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+          }
+        });
+      });
+      document
+        .querySelectorAll("[data-animate]")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
